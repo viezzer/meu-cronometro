@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
-  const targetDate = new Date('December 27, 2023 15:00:00').getTime(); // Defina sua data alvo aqui
-  console.log(targetDate)
+  const targetDate = new Date('12 27, 2023 10:00:00 GMT-0300').getTime(); // Defina sua data alvo aqui
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
   function calculateTimeRemaining() {
@@ -34,11 +33,13 @@ const Timer = () => {
   const formatTimeUnit = (unit) => String(unit).padStart(2, '0');
 
   return (
-    <div className="text-4xl text-center mt-8">
-      <div>{`${formatTimeUnit(timeRemaining.days)} days`}</div>
-      <div>{`${formatTimeUnit(timeRemaining.hours)}:${formatTimeUnit(timeRemaining.minutes)}:${formatTimeUnit(timeRemaining.seconds)}`}</div>
+    <div className='flex justify-center h-screen pt-20 bg-custom'>
+      <div className="text-6xl font-bold text-center text-green-600 mt-5">
+        <div>{`${formatTimeUnit(timeRemaining.days)} dias`}</div>
+        <div>{`${formatTimeUnit(timeRemaining.hours)}:${formatTimeUnit(timeRemaining.minutes)}:${formatTimeUnit(timeRemaining.seconds)}`}</div>
+      </div>
     </div>
   );
 };
 
-export default Timer;
+export default Timer; 
